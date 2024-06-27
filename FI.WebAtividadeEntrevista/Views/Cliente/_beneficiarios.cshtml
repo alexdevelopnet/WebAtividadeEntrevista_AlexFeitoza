@@ -1,0 +1,35 @@
+﻿@Model List<WebAtividadeEntrevista.Models.ClienteModel>
+
+
+    <table id="benefeciario" class="table">
+        <thead>
+            <tr>
+                <th scope="col">CPF</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Ações</th>
+
+            </tr>
+        </thead>
+        <tbody id="resultado">
+            @if (Model.Beneficiarios != null)
+            {
+                foreach (var item in Model.Beneficiarios)
+                {
+                    <tr>
+                        <th scope="row" style="display:none">@item.Id</th>
+                        <td>@item.Cpf</td>
+                        <td>@item.Nome</td>
+                        <td>
+                            <button type="button" class="btn btn-group-sm btn-warning">Alterar</button>
+                            <button type="button" class="btn btn-group-sm btn-danger">Exclluir</button>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr class="odd"><td valign="top" colspan="4">Nenhum resultado encontrado! </td></tr>
+            }
+        </tbody>
+    </table>
+

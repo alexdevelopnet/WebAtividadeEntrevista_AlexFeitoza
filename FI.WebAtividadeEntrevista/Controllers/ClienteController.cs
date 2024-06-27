@@ -154,7 +154,7 @@ namespace WebAtividadeEntrevista.Controllers
         {
             List<Beneficiario> beneficiarios = new BoCliente().ListarBeneficiario();
             clienteModel.Beneficiarios = beneficiarios;
-            return View(clienteModel);
+            return PartialView("_beneficiarios",clienteModel);
         }
 
     }

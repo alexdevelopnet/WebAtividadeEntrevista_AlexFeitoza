@@ -71,4 +71,17 @@ function ModalDialog(titulo, texto) {
     $('#' + random).modal('show');
 }
 
-document.querySelector("#beneficiario").onclick = exibirModalAusentar;
+$(document).ready(function () {
+    $('#beneficiario').click(function () {
+        $("#modalBeneficiarios").fadeIn(); 
+        $.ajax({
+            type:'GET',
+            url: '/Cliente/ListarBeneficiarios',
+            sucesso: function (result) {
+                
+                $("#listaBenefeciarios").html(result);
+                $('#modalBeneficiarios').modal();
+            }
+        });
+    });
+})

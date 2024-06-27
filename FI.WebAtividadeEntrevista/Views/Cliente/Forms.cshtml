@@ -95,11 +95,11 @@
 
 </form>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal" id="modalBeneficiarios" tabindex="-1">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                Bénefícioarios</h5>
+                <h5>Benefícioarios</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -125,40 +125,13 @@
                             </div>
                         </div>
                     </div>
-
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">CPF</th>
-                                <th scope="col">Nome</th>
-                                <th scope="col">Ações</th>
-
-                            </tr>
-                        </thead>
-                        <tbody id="resultado">
-                            @*@if (Model.Beneficiarios != null)
-                            {
-
-                                foreach (var beneficiarios in @Model.Beneficiarios)
-                                {
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>@beneficiarios.Nome</td>
-                                        <td>@beneficiarios.Cpf</td>
-                                        <td>
-                                            <button type="button" class="btn btn-info" id="alterar-beneficiario">Alterar</button>
-                                            <button type="button" class="btn btn-info" id="excluir-beneficiario">Excluir</button>
-                                        </td>
-                                    </tr>
-                                }
-                            }*@
-                        </tbody>
-                    </table>
                 </form>
+
+                <div id="listaBenefeciarios"></div>
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Send message</button>
             </div>
         </div>
     </div>
