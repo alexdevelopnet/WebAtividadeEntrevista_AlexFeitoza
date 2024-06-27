@@ -1,7 +1,20 @@
 ﻿
 $(document).ready(function () {
+    if (obj) {
+        $('#formCadastro #Nome').val(obj.Nome);
+        $('#formCadastro #CEP').val(obj.CEP);
+        $('#formCadastro #Email').val(obj.Email);
+        $('#formCadastro #Sobrenome').val(obj.Sobrenome);
+        $('#formCadastro #Nacionalidade').val(obj.Nacionalidade);
+        $('#formCadastro #Estado').val(obj.Estado);
+        $('#formCadastro #Cidade').val(obj.Cidade);
+        $('#formCadastro #Logradouro').val(obj.Logradouro);
+        $('#formCadastro #Telefone').val(obj.Telefone);
+    }
+
     $('#formCadastro').submit(function (e) {
         e.preventDefault();
+
         $.ajax({
             url: urlPost,
             method: "POST",
@@ -27,6 +40,7 @@ $(document).ready(function () {
                 function (r) {
                     ModalDialog("Sucesso!", r)
                     $("#formCadastro")[0].reset();
+                    window.location.href = urlRetorno;
                 }
         });
     })
@@ -57,5 +71,4 @@ function ModalDialog(titulo, texto) {
     $('#' + random).modal('show');
 }
 
-
-
+document.querySelector("#beneficiario").onclick = exibirModalAusentar;
